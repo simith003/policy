@@ -94,7 +94,7 @@ public class Discuz_72_Injection extends PolicyInfo implements Policy {
 				if (result.size() > 0)
 					info = result.get(0);
 
-				if (info != null && info.indexOf(":") != 0)
+				if (info != null && info.indexOf(":") != -1)
 					infos = info.split(":");
 
 				if (infos.length != 2)
